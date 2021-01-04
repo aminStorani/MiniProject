@@ -7,6 +7,7 @@ namespace MiniProject
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Console.WriteLine("Amin Storani");
         }
     }
 }
