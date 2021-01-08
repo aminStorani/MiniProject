@@ -20,7 +20,7 @@ namespace MiniProject
             string mobileModel;
             DateTime nu = new DateTime();
             nu = DateTime.Now;
-            // TimeSpan diff = buy-nu;
+            
             while (assetsInput.ToLower() != "result" && (assetsInput.ToLower() == "lap" || assetsInput.ToLower() == "mob"))
             {
                if (assetsInput.ToLower() == "lap")
@@ -44,7 +44,7 @@ namespace MiniProject
                                 Console.WriteLine("Wrong input");
                                 break;
                             }
-                            Console.WriteLine("When did you bought it ?");
+                            Console.WriteLine("When did you bought it ? please write in this formate (2021-01-08)");
                             string dateOfBuying = Console.ReadLine();
                             Console.WriteLine("What was the price ?");
                             double priceOfLaptop = Convert.ToInt32(Console.ReadLine());
@@ -82,7 +82,7 @@ namespace MiniProject
                                 Console.WriteLine("Wrong input");
                                 break;
                             }
-                            Console.WriteLine("When did you bought it ?");
+                            Console.WriteLine("When did you bought it ? please write in this formate (2021-01-08)");
                             string dateOfBuying = Console.ReadLine();
                             Console.WriteLine("What was the price ?");
                             double priceOfMobile = Convert.ToInt32(Console.ReadLine());
@@ -99,10 +99,12 @@ namespace MiniProject
 
                }
             }
+           // TimeSpan diff = Convert.ToDateTime(dateOfBuying) - nu;
             trackingList = trackingList.OrderBy(Electronics => Electronics.productName).ToList();
             Console.WriteLine("Listing the data.");
             foreach (Electronics assets in trackingList)
             {
+               
                 Console.WriteLine($"{assets.productName}\t {assets.buyingDate}\t {assets.price}\t {assets.office}");
                 // Console.ReadLine();
             }
