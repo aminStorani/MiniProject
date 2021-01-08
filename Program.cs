@@ -37,6 +37,12 @@ namespace MiniProject
                         string country = Console.ReadLine();
                         LaptopComputers laptop = new LaptopComputers(dateOfBuying, laptopModel, priceOfLaptop, country);
                         computerTrackingList.Add(laptop);
+                       
+                    }
+                    else
+                    {
+                        Console.WriteLine("wrong input");
+                        break;
                     }
                    
                 }
@@ -80,153 +86,3 @@ namespace MiniProject
     }
 }
 
-/*
-while (true)
-
-{
-
-    Console.Write("Input category: ");
-
-    categoryInput = Console.ReadLine();
-
-    if (categoryInput.ToLower() == "q")
-
-    {
-
-        break;
-
-    }
-
-
-
-    //Reading input for product and break first while loop if 'q' 
-
-    Console.Write("Input product: ");
-
-    productInput = Console.ReadLine();
-
-    if (productInput.ToLower() == "q")
-
-    {
-
-        break;
-
-    }
-
-
-
-    //second while loop 
-
-    while (true)
-
-    {
-
-        //Reading input for category and breaking second while loop if 'q' 
-
-        Console.Write("Input the price: ");
-
-        priceInput = Console.ReadLine();
-
-        if (priceInput.ToLower() == "q")
-
-        {
-
-            break;
-
-        }
-
-        else
-
-        {
-
-            //Check if input is an integer otherwise print error message 
-
-            //and continue second while loop 
-
-            if (int.TryParse(priceInput, out price) == false)
-
-            {
-
-                Console.WriteLine("Add Price like 123, no decimals allowed.");
-
-                continue;
-
-            }
-
-            break;
-
-        }
-
-    }
-
-
-
-    //Break first while loop if 'q' was pressed for price inside second while loop 
-
-    if (priceInput.ToLower() == "q")
-
-    {
-
-        break;
-
-    }
-
-
-
-    //Add items to list 
-
-    itemList.Add(new Item(categoryInput, productInput, price));
-
-}
-
-//Create Header 
-
-Console.WriteLine("Category".PadRight(20) + "Product".PadRight(20) + "Price".PadRight(20));
-
-
-
-//Create Header PadRight 
-
-//Console.WriteLine("Category".PadRight(20) + "Product".PadRight(20) + "Price".PadLeft(20)); 
-
-
-
-//Sort item list 
-
-itemList = itemList.OrderBy(item => item.Price).ToList();
-
-
-
-//loop through item list and print to Console 
-
-foreach (Item item in itemList)
-
-{
-
-    Console.WriteLine(item.Category.PadRight(20) + item.Product.PadRight(20) + item.Price.ToString().PadLeft(20));
-
-}
-
-//Calculate sum of price 
-
-int sum = itemList.Sum(item => item.Price);
-
-
-
-//Print summary 
-
-Console.WriteLine("Sum: " + sum);
-
-
-
-//Print summary of price with PadRight  
-
-//Console.WriteLine("Sum: ".PadLeft(60 - (sum.ToString().Length + 2)) + sum.ToString().PadLeft(sum.ToString().Length+2)); 
-
-
-
-Console.ReadLine(); 
-
-        } 
-
-    } */
